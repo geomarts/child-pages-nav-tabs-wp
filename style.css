@@ -1,0 +1,287 @@
+/*
+Theme Name: Playground
+Description: George Martsoukos WordPress Playground theme
+Author: George Martsoukos
+Author URI: https://georgemartsoukos.com
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: playground
+*/
+
+/* RESET & BASIC STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+	--white: #fff;
+	--red: #d90429;
+	--darkblue: #2b2d42;
+	--lightblue: #92dce5;
+	--extralightgreen: #f8f7f9;
+	--darkgray: #6c757d;
+	--lightgray: #e6e6e9;
+	--darkpink: #f15bb5;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+}
+
+body {
+	font: 18px/1.5 sans-serif;
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+	font-size: 100%;
+}
+
+.container {
+	max-width: 1400px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 900px;
+}
+
+/* MAIN STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.site-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-header {
+	position: sticky;
+	top: 0;
+	padding: 3vh 0;
+	text-align: center;
+	background: var(--extralightgreen);
+	z-index: 1;
+	transition: background 0.3s;
+}
+
+.site-header > div {
+	display: flex;
+	justify-content: center;
+}
+
+.site-header a {
+	line-height: 1;
+}
+
+.site-header svg {
+	fill: var(--darkblue);
+	transition: fill 0.3s;
+}
+
+.site-main {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	text-align: center;
+	margin: 60px 0;
+}
+
+.site-main > * {
+	width: 100%;
+}
+
+.site-main h1 {
+	line-height: 1.2;
+	margin: 0 0 20px;
+}
+
+.site-footer {
+	padding: 30px 0;
+	color: var(--white);
+	background: var(--darkblue);
+}
+
+.site-footer .logo-wrapper div {
+	font-style: italic;
+	font-size: 15px;
+	line-height: 1;
+}
+
+.site-footer .widgets-wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 40px;
+	border-top: 1px solid #353851;
+	margin-top: 20px;
+}
+
+.site-footer h5 {
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.site-footer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.site-footer ul:not(.socials) li + li {
+	margin-top: 10px;
+}
+
+.site-footer a {
+	text-decoration: none;
+}
+
+.site-footer .logo svg {
+	fill: var(--white);
+}
+
+.site-footer .socials {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	justify-content: flex-start;
+	align-items: center;
+	grid-gap: 15px;
+}
+
+.site-footer .socials a {
+	display: flex;
+}
+
+.site-footer .socials svg {
+	fill: var(--white);
+	transition: fill 0.2s;
+}
+
+.site-footer .socials a:hover svg {
+	fill: var(--lightblue);
+}
+
+.btn-contact {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	text-decoration: none;
+	padding: 10px 20px;
+	min-width: 200px;
+	color: var(--white);
+	transition: all 0.2s;
+}
+
+.btn-contact .shape {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	transition: fill 0.2s;
+}
+
+.btn-contact:hover .shape {
+	fill: var(--red);
+}
+
+/* TAB STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section-with-tabs .breadcrumbs {
+	padding: 0;
+	margin: 0 0 20px;
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	font-size: 14px;
+	color: var(--darkgray);
+}
+
+.section-with-tabs .breadcrumbs .breadcrumb {
+	position: relative;
+}
+
+.section-with-tabs .breadcrumbs .breadcrumb:not(:first-child)::before {
+	content: "/";
+	position: absolute;
+	top: 50%;
+	left: -13px;
+	transform: translateY(-50%);
+}
+
+.section-with-tabs .tabs-wrapper {
+	white-space: nowrap;
+	padding-bottom: 10px;
+	overflow-x: auto;
+}
+
+.section-with-tabs .tabs-wrapper::-webkit-scrollbar {
+	height: 8px;
+}
+
+.section-with-tabs .tabs-wrapper::-webkit-scrollbar-thumb,
+.section-with-tabs .tabs-wrapper::-webkit-scrollbar-track {
+	border-radius: 6px;
+}
+
+.section-with-tabs .tabs-wrapper::-webkit-scrollbar-thumb {
+	background: var(--darkpink);
+}
+
+.section-with-tabs .tabs-wrapper::-webkit-scrollbar-track {
+	background: var(--lightgray);
+}
+
+.section-with-tabs .tabs {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+}
+
+.section-with-tabs .tabs .tab {
+	flex-grow: 1;
+}
+
+.section-with-tabs .tabs .tab-link {
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 5px;
+	color: var(--darkgray);
+	min-width: 120px;
+	border-bottom: 2px solid var(--lightgray);
+	transition: all 0.2s;
+}
+
+.section-with-tabs .tabs .tab.active .tab-link,
+.section-with-tabs .tabs .tab .tab-link:hover {
+	color: var(--darkpink);
+	border-color: var(--darkpink);
+}
+
+.section-with-content {
+	text-align: left;
+	margin-top: 60px;
+}
+
+@media (max-width: 650px) {
+	.site-footer .widgets-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/*ANIMATIONS*/
+.site-header.with-bg {
+	background: var(--red);
+}
+.site-header.with-bg svg {
+	fill: var(--white);
+}
