@@ -9,7 +9,7 @@ $next_page        = $child_pages[ $current_page_key + 1 ];
 	<div class="container container-sm">
 		<div class="navigation">
 			<h2 class="screen-reader-text">
-				<?php esc_html_e( 'Company Pages Pagination', 'playground' ); ?>
+				<?php esc_html_e( 'Navigation between the company pages', 'playground' ); ?>
 			</h2>
 			<?php if ( $prev_page ) : ?>
 				<a class="previous" href="<?php echo esc_url( get_permalink( $prev_page ) ); ?>">
