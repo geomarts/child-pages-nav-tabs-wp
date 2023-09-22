@@ -50,6 +50,19 @@ button {
 	max-width: 900px;
 }
 
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
 /* MAIN STYLES
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-wrapper {
@@ -269,6 +282,38 @@ button {
 .section-with-content {
 	text-align: left;
 	margin-top: 60px;
+}
+
+.section-tabs-navigation .navigation {
+	position: relative;
+	display: flex;
+	padding-top: 40px;
+	margin-top: 40px;
+}
+
+.section-tabs-navigation .navigation::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 25%;
+	border-top: 1px solid var(--lightgray);
+}
+
+.section-tabs-navigation a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+}
+
+.section-tabs-navigation .next {
+	margin-left: auto;
+}
+
+.section-tabs-navigation svg {
+	fill: var(--darkpink);
 }
 
 @media (max-width: 650px) {

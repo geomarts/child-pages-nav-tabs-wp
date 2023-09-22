@@ -65,6 +65,12 @@ $child_pages  = get_pages(
 						<?php the_content(); ?>
 					</div>
 				</section>
+
+
+				<?php
+				/*NAVIGATION*/
+				get_template_part( 'partials/tabs-navigation', null, array( 'child_pages' => $child_pages ) );
+				?>
 			</article>
 			<?php
 		endwhile;
